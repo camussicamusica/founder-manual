@@ -1,0 +1,1 @@
+window.FP_CONFIG = { APPS_SCRIPT_URL: "", BOOKING_EMBED_URL: "", BUILDER_PATH: "builder/" };

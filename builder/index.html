@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Founder Manual Builder | Pareto Talent</title>
+<meta name="description" content="Turn the rules in your head into a one-page Founder Manual a Right Hand, any hire, or your AI can work from on day one. 12 short steps. No signup. Nothing leaves your browser.">
+<meta name="theme-color" content="#050A0E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Hanken+Grotesk:wght@600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#050A0E; --s1:#0B1119; --s2:#0F1923;
+  --g:#10B981; --g2:#34D399; --g3:#6EE7B7; --amber:#E0973F;
+  --tx:#F0F4F8; --tx2:#94A3B8; --mu:#64748B;
+  --line:rgba(255,255,255,.06); --line2:rgba(255,255,255,.16);
+  --glass:rgba(15,25,35,.72);
+  --f-display:"Hanken Grotesk","DM Sans",system-ui,sans-serif;
+  --f-body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-label:"Space Grotesk","DM Sans",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--tx); font-family:var(--f-body); font-size:16px; line-height:1.55;
+  min-height:100vh; overflow-x:hidden;
+  background-image:
+    radial-gradient(900px 500px at 85% -10%, rgba(16,185,129,.14), transparent 60%),
+    radial-gradient(700px 420px at -10% 30%, rgba(16,185,129,.07), transparent 60%);
+  background-attachment:fixed;
+}
+h1,h2,h3{font-family:var(--f-display); font-weight:800; letter-spacing:-0.04em; margin:0; line-height:1.08}
+p{margin:0}
+a{color:var(--g2)}
+button,input,textarea{font:inherit; color:inherit}
+.sr-only{position:absolute!important; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; padding:0; margin:-1px}
+:focus-visible{outline:3px solid var(--g3); outline-offset:2px; border-radius:8px}
+
+/* layout */
+.site-head{max-width:1000px; margin:0 auto; padding:18px 16px 6px; display:flex; align-items:center; justify-content:space-between; gap:12px}
+.logo{display:inline-flex; align-items:center; min-height:44px; text-decoration:none}
+.logo img{height:38px; width:auto; display:block}
+.logo-fallback{font-family:var(--f-display); font-weight:800; letter-spacing:-0.04em; font-size:22px; color:#468FFE}
+.head-note{font-family:var(--f-label); font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--tx2)}
+main{max-width:1000px; margin:0 auto; padding:10px 16px 40px; outline:none}
+.wrap{max-width:720px; margin:0 auto}
+.wrap.wide{max-width:960px}
+.card{
+  background:var(--glass); border:1px solid var(--line); border-radius:24px;
+  -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px);
+  padding:28px; box-shadow:0 20px 60px rgba(0,0,0,.35);
+}
+.eyebrow{font-family:var(--f-label); font-size:12px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--g3)}
+.muted{color:var(--tx2)}
+footer{max-width:1000px; margin:0 auto; padding:26px 16px 40px; color:var(--tx2); font-size:13px; text-align:center}
+footer a{color:var(--tx2)}
+
+/* buttons */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:48px; padding:14px 26px;
+  border-radius:12px; border:2px solid transparent; cursor:pointer; text-decoration:none;
+  font-family:var(--f-display); font-weight:800; font-size:16px; line-height:1.1; transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.btn-primary{background:linear-gradient(180deg,#34D399,#10B981); color:#050A0E; box-shadow:0 8px 28px rgba(16,185,129,.28)}
+.btn-primary:hover{transform:translateY(-1px); box-shadow:0 12px 34px rgba(16,185,129,.4)}
+.btn-ghost{background:transparent; color:var(--g2); border-color:rgba(16,185,129,.7)}
+.btn-ghost:hover{background:rgba(16,185,129,.1)}
+.btn-quiet{background:rgba(255,255,255,.05); color:var(--tx); border-color:var(--line2)}
+.btn-quiet:hover{background:rgba(255,255,255,.09)}
+.btn-danger{background:rgba(224,151,63,.14); color:#F2B968; border-color:rgba(224,151,63,.6)}
+.btn-sm{min-height:44px; padding:10px 18px; font-size:15px}
+
+/* intro */
+.intro h1{font-size:clamp(34px,6.2vw,60px); line-height:1.02; margin:12px 0 14px}
+.intro .sub{font-family:var(--f-label); font-size:15px; font-weight:600; letter-spacing:.06em; color:var(--g3); text-transform:uppercase}
+.intro ul{list-style:none; margin:26px 0 26px; padding:0; display:grid; gap:12px}
+.intro li{display:flex; gap:14px; align-items:flex-start; padding:16px 18px; border-radius:16px; background:rgba(255,255,255,.03); border:1px solid var(--line)}
+.intro li .n{flex:0 0 auto; width:28px; height:28px; border-radius:50%; background:rgba(16,185,129,.16); border:1px solid rgba(52,211,153,.5); color:var(--g3); font-family:var(--f-label); font-weight:700; font-size:14px; display:grid; place-items:center}
+.intro li b{display:block; font-family:var(--f-display); font-weight:700; letter-spacing:-0.02em; font-size:17px}
+.intro .actions{display:flex; flex-wrap:wrap; gap:12px; align-items:center}
+.intro .fine{margin-top:16px; color:var(--tx2); font-size:14px}
+
+/* progress */
+.prog{margin:6px 0 16px}
+.prog-top{display:flex; justify-content:space-between; gap:12px; align-items:baseline; margin-bottom:8px; flex-wrap:wrap}
+.prog-label{font-family:var(--f-label); font-weight:700; font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:var(--g3)}
+.prog-title{font-size:13px; color:var(--tx2)}
+.bar{height:8px; background:rgba(255,255,255,.08); border-radius:99px; overflow:hidden}
+.fill{height:100%; background:linear-gradient(90deg,#10B981,#6EE7B7); border-radius:99px; transition:width .3s ease}
+
+/* step */
+.step h1{font-size:clamp(28px,5vw,40px); margin:0 0 8px}
+.step h1:focus{outline:none}
+.step .lead{color:var(--tx2); margin-bottom:22px; max-width:60ch}
+.group{border:0; padding:0; margin:0 0 26px; min-width:0}
+.group legend,.field label.lab{display:block; padding:0; font-family:var(--f-display); font-weight:700; font-size:17px; letter-spacing:-0.02em; margin-bottom:4px}
+.group .hint,.field .hint{display:block; color:var(--tx2); font-size:14px; margin-bottom:10px}
+.chips{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px}
+.chip{
+  min-height:44px; padding:9px 16px; border-radius:99px; border:1.5px solid var(--line2); background:rgba(255,255,255,.03);
+  color:var(--tx); cursor:pointer; font-weight:500; font-size:15px; line-height:1.25; text-align:left; transition:background .12s, border-color .12s;
+}
+.chip:hover{border-color:rgba(52,211,153,.6); background:rgba(16,185,129,.07)}
+.chip[aria-pressed="true"]{background:rgba(16,185,129,.18); border-color:var(--g2); color:#fff}
+.chip[aria-pressed="true"]::before{content:"\2713\00a0"; color:var(--g3); font-weight:700}
+.input,.field input,.field textarea{
+  width:100%; min-height:48px; padding:12px 14px; border-radius:12px; border:1.5px solid var(--line2);
+  background:var(--s1); color:var(--tx); font-size:16px;
+}
+.input::placeholder,.field input::placeholder{color:#7D8CA1}
+.input:focus,.field input:focus,.field textarea:focus{outline:3px solid rgba(110,231,183,.55); outline-offset:1px; border-color:var(--g2)}
+.field{margin-bottom:22px}
+.two{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+
+/* tasks */
+.tasks{display:grid; gap:8px}
+.task{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; padding:10px 14px; min-height:56px; border:1.5px solid var(--line2); border-radius:14px; background:rgba(255,255,255,.03)}
+.task.on{border-color:var(--g2); background:rgba(16,185,129,.1)}
+.task label{display:flex; align-items:center; gap:12px; cursor:pointer; flex:1 1 200px; min-height:44px; font-weight:500}
+.task input[type=checkbox]{width:22px; height:22px; accent-color:#10B981; flex:0 0 auto; cursor:pointer}
+.stepper{display:inline-flex; align-items:center; gap:6px}
+.stepper button{width:44px; height:44px; border-radius:12px; border:1.5px solid var(--line2); background:var(--s1); color:var(--tx); font-size:22px; line-height:1; cursor:pointer}
+.stepper button:hover{border-color:var(--g2)}
+.stepper output{min-width:78px; text-align:center; font-family:var(--f-label); font-weight:700; font-size:15px}
+.task-own{display:grid; grid-template-columns:1fr auto; gap:10px; align-items:center}
+.total{margin-top:14px; padding:14px 16px; border-radius:14px; background:rgba(16,185,129,.1); border:1px solid rgba(52,211,153,.35); font-family:var(--f-label); font-weight:600}
+.total b{color:var(--g3); font-size:20px}
+
+/* nav */
+.nav{position:sticky; bottom:0; margin:22px -4px 0; padding:14px 4px calc(14px + env(safe-area-inset-bottom)); display:flex; justify-content:space-between; gap:12px; background:linear-gradient(180deg,rgba(5,10,14,0),rgba(5,10,14,.92) 35%); z-index:5}
+.nav .btn{flex:0 1 auto}
+.nav .btn-primary{flex:1 1 auto; max-width:320px; margin-left:auto}
+.keys{font-size:13px; color:var(--tx2); text-align:center; margin-top:4px}
+
+/* result */
+.res-head{margin-bottom:18px}
+.res-head h1{font-size:clamp(30px,5.4vw,48px); margin:8px 0 8px}
+.actions-row{display:flex; flex-wrap:wrap; gap:10px; margin:16px 0 22px}
+.stack{display:grid; gap:22px}
+.card h2{font-size:clamp(22px,3.2vw,30px); margin-bottom:6px}
+.card .desc{color:var(--tx2); margin-bottom:16px; max-width:70ch}
+
+/* the manual (screen) */
+#manual{background:linear-gradient(180deg,rgba(16,26,36,.9),rgba(11,17,25,.92)); border:1px solid var(--line); border-radius:24px; padding:clamp(22px,4vw,44px); box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.m-eyebrow{font-family:var(--f-label); font-weight:700; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--g3)}
+.m-title{font-size:clamp(30px,5.2vw,46px); margin:8px 0 6px; overflow-wrap:anywhere}
+.m-sub{color:var(--tx2); font-size:15px}
+.m-rule{border:0; border-top:1px solid var(--line2); margin:20px 0}
+.m-intro{color:var(--tx2); font-size:15px; margin-bottom:6px}
+.m-sections{display:grid; gap:0}
+.m-sec{padding:20px 0; border-top:1px solid var(--line)}
+.m-sec:first-child{border-top:0}
+.m-sec.accent{border-left:3px solid var(--amber); padding-left:16px; margin-left:-2px}
+.m-sec-top{display:flex; align-items:baseline; gap:12px; margin-bottom:8px}
+.m-num{font-family:var(--f-label); font-weight:700; font-size:13px; color:var(--g2); letter-spacing:.06em}
+.m-sec h3{font-size:clamp(19px,2.6vw,23px); letter-spacing:-0.03em}
+.m-sec p{margin:6px 0; overflow-wrap:anywhere}
+.m-lab{display:block; font-weight:700; color:var(--g3); margin:10px 0 4px}
+.m-sec.accent .m-lab{color:#F2B968}
+.m-sec ul,.m-sec ol{margin:4px 0 8px; padding-left:22px}
+.m-sec li{margin:3px 0; overflow-wrap:anywhere}
+.m-sec ul li::marker{color:var(--g2)}
+.m-sec ol li::marker{color:var(--g2); font-weight:700}
+.m-foot{margin-top:18px; padding-top:14px; border-top:1px solid var(--line); font-size:12px; color:var(--tx2)}
+.empty{padding:18px; border:1px dashed var(--line2); border-radius:16px; color:var(--tx2)}
+
+/* handoff */
+.hand-grid{display:grid; grid-template-columns:1.3fr 1fr; gap:22px}
+.hand ol{list-style:none; margin:0; padding:0; display:grid; gap:10px; counter-reset:r}
+.hand li{display:flex; align-items:center; gap:14px; padding:14px 16px; border-radius:16px; background:rgba(255,255,255,.04); border:1px solid var(--line); counter-increment:r}
+.hand li::before{content:counter(r); flex:0 0 auto; width:34px; height:34px; border-radius:50%; display:grid; place-items:center; font-family:var(--f-display); font-weight:800; color:#050A0E; background:linear-gradient(180deg,#34D399,#10B981)}
+.hand li .t{flex:1 1 auto; font-weight:600; min-width:0; overflow-wrap:anywhere}
+.hand li .hrs{font-family:var(--f-label); font-weight:700; color:var(--g3); white-space:nowrap}
+.stats{display:grid; gap:10px; align-content:start}
+.stat{padding:14px 16px; border-radius:16px; background:rgba(16,185,129,.09); border:1px solid rgba(52,211,153,.3)}
+.stat .v{font-family:var(--f-display); font-weight:800; font-size:30px; letter-spacing:-0.04em; color:var(--g3); line-height:1.05}
+.stat .k{font-size:14px; color:var(--tx2)}
+.also{margin-top:14px; font-size:15px}
+.also ul{margin:6px 0 0; padding-left:20px}
+.note{margin-top:14px; font-size:13px; color:var(--tx2)}
+
+/* markdown box */
+.md-wrap{position:relative}
+.md-bar{display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:12px}
+pre.md{margin:0; padding:18px; max-height:380px; overflow:auto; background:#070D12; border:1px solid var(--line2); border-radius:16px; color:#CFE9DD; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:13px; line-height:1.55; white-space:pre-wrap; overflow-wrap:anywhere}
+.copied{font-family:var(--f-label); font-weight:600; font-size:14px; color:var(--g3)}
+
+/* closing */
+.close{text-align:center; padding:clamp(28px,5vw,48px); border:1px solid rgba(52,211,153,.35); background:linear-gradient(180deg,rgba(16,185,129,.14),rgba(15,25,35,.75))}
+.close h2{font-size:clamp(26px,4.4vw,40px); max-width:20ch; margin:0 auto 14px}
+.close p{max-width:56ch; margin:0 auto 10px; color:#D5E0EA}
+.close .btn{margin-top:14px}
+
+.print-only{display:none}
+
+@media (max-width:720px){
+  .card{padding:20px; border-radius:20px}
+  .two{grid-template-columns:1fr}
+  .hand-grid{grid-template-columns:1fr}
+  .actions-row .btn{flex:1 1 calc(50% - 10px)}
+  .nav .btn-primary{max-width:none}
+  .head-note{display:none}
+}
+@media (max-width:400px){
+  .actions-row .btn{flex:1 1 100%}
+  .task-own{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important; animation:none!important}}
+
+/* print: only the manual, on white, one page where possible */
+@page{size:letter; margin:12mm}
+@media print{
+  html,body{background:#fff!important; color:#111!important}
+  body{background-image:none!important; font-size:9pt; line-height:1.38}
+  .no-print,.site-head,footer,.nav,#live{display:none!important}
+  main{padding:0; max-width:none}
+  .wrap,.wrap.wide{max-width:none}
+  .stack{display:block}
+  #manual{background:#fff!important; border:0; box-shadow:none; padding:0; border-radius:0; color:#111}
+  .print-only{display:block}
+  .m-eyebrow{color:#047857}
+  .m-title{font-size:20pt; margin:2pt 0; color:#0B1119}
+  .m-sub,.m-intro,.m-foot{color:#444; font-size:8.5pt}
+  .m-rule{border-top:1px solid #cfd6dc; margin:8pt 0}
+  .m-sections{display:block; column-count:2; column-gap:9mm}
+  .m-sec{break-inside:avoid; page-break-inside:avoid; padding:6pt 0; border-top:1px solid #e3e8ec}
+  .m-sec.accent{border-left:2px solid #B7791F; padding-left:6pt; margin-left:0}
+  .m-sec h3{font-size:10.5pt; color:#0B1119}
+  .m-num{color:#047857; font-size:8pt}
+  .m-lab{color:#065F46; margin:4pt 0 1pt}
+  .m-sec.accent .m-lab{color:#92400E}
+  .m-sec p,.m-sec li{color:#111; margin:1.5pt 0}
+  .m-sec ul,.m-sec ol{margin:1pt 0 3pt; padding-left:13pt}
+  .m-sec-top{margin-bottom:2pt}
+}
+</style>
+</head>
+<body>
+<a class="sr-only" href="#app">Skip to content</a>
+<header class="site-head no-print">
+  <a class="logo" href="../index.html" id="logoLink" aria-label="Pareto Talent">
+    <img id="logoImg" src="https://assets.cdn.filesafe.space/KjTTNn7q7Rl3zed7tzFS/media/65d4092400a2ec10ef5c1bef.png" alt="Pareto Talent" height="38">
+  </a>
+  <span class="head-note">The Founder Manual Builder</span>
+</header>
+
+<main id="app" tabindex="-1"></main>
+<div id="live" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+<footer class="no-print">
+  <p>A lead magnet concept built for Pareto Talent by Sofia Camussi.</p>
+</footer>
+
+<noscript><p style="max-width:640px;margin:40px auto;padding:0 16px">The Founder Manual Builder needs JavaScript to run in your browser. Nothing is sent anywhere.</p></noscript>
+
+<script>
+(function () {
+'use strict';
+
+/*PURE-START*/
+var TASKS = [
+  { id: 'inbox', label: 'Inbox triage' },
+  { id: 'calendar', label: 'Calendar and scheduling' },
+  { id: 'followups', label: 'Follow-ups' },
+  { id: 'invoicing', label: 'Invoicing and collections' },
+  { id: 'travel', label: 'Travel' },
+  { id: 'meetings', label: 'Meeting prep and notes' },
+  { id: 'crm', label: 'CRM and data entry' },
+  { id: 'social', label: 'Social posting' },
+  { id: 'support', label: 'Customer support replies' },
+  { id: 'research', label: 'Research' },
+  { id: 'recruiting', label: 'Recruiting coordination' },
+  { id: 'errands', label: 'Personal errands' }
+];
+
+// Option = string, or { l: chip label, p: phrase used inside a sentence, s: full sentence }.
+var STEPS = [
+  { id: 's1', title: 'Me and the business', q: 'Start with the basics.',
+    lead: 'This goes at the top of your manual, so whoever reads it knows who they work for.',
+    groups: [
+      { id: 'name', type: 'text', label: 'Your name', ph: 'Alex Rivera', ac: 'name' },
+      { id: 'company', type: 'text', label: 'Company', ph: 'Rivera Growth Partners', ac: 'organization' },
+      { id: 'type', type: 'single', label: 'What kind of business is it?', own: false, opts: [
+        { l: 'Agency', p: 'an agency' }, { l: 'Coaching', p: 'a coaching business' }, { l: 'Consulting', p: 'a consulting practice' },
+        { l: 'Speaker or expert', p: 'an expert business built around me' }, { l: 'Professional services', p: 'a professional services firm' },
+        { l: 'Software', p: 'a software company' }, { l: 'E-commerce', p: 'an e-commerce brand' }, { l: 'Real estate', p: 'a real estate business' },
+        { l: 'Creative studio', p: 'a creative studio' } ] },
+      { id: 'team', type: 'single', label: 'How big is the team?', own: false, opts: [
+        { l: 'Just me', s: 'Right now it is just me.' }, { l: '2 to 5 people', s: 'The team is 2 to 5 people.' },
+        { l: '6 to 15 people', s: 'The team is 6 to 15 people.' }, { l: '16 to 50 people', s: 'The team is 16 to 50 people.' },
+        { l: '50+ people', s: 'The team is more than 50 people.' } ] },
+      { id: 'line', type: 'text', label: 'In one line: what do you sell, and to whom?', ph: 'We run paid ads for dental practices.' }
+    ] },
+  { id: 's2', title: "My week's rhythm", q: 'How does your week actually run?',
+    lead: 'Hours, protected time and time zone. This is what a Right Hand needs before touching your calendar.',
+    groups: [
+      { id: 'hours', type: 'single', label: 'When do you work?', own: false, opts: [
+        { l: 'Early, 6am to 2pm', p: 'early, roughly 6am to 2pm' }, { l: 'Standard, 9am to 5pm', p: 'on a standard day, roughly 9am to 5pm' },
+        { l: 'Late, noon to 8pm', p: 'late, roughly noon to 8pm' }, { l: 'Split day, long break', p: 'in a split day with a long break in the middle' },
+        { l: 'It changes weekly', p: 'on a schedule that changes. Check my calendar before you assume anything' } ] },
+      { id: 'deep', type: 'multi', label: 'Which blocks are protected for deep work?', hint: 'Pick any. These are the hours nobody books over.', opts: [
+        'Mornings before noon', 'Afternoons', 'One 2-hour block, every day', 'Fridays', 'Mondays', 'No meetings before 10am'] },
+      { id: 'tz', type: 'single', label: 'Time zone', hint: 'Everything gets scheduled in this zone unless you say otherwise.', ownPh: 'Another time zone', opts: [
+        { l: 'Eastern (ET)', p: 'Eastern Time (ET)' }, { l: 'Central (CT)', p: 'Central Time (CT)' },
+        { l: 'Mountain (MT)', p: 'Mountain Time (MT)' }, { l: 'Pacific (PT)', p: 'Pacific Time (PT)' } ] },
+      { id: 'mlen', type: 'single', label: 'Default meeting length', own: false, opts: [
+        { l: '15 minutes', p: '15 minutes' }, { l: '30 minutes', p: '30 minutes' }, { l: '45 minutes', p: '45 minutes' }, { l: '60 minutes', p: '60 minutes' }] },
+      { id: 'buffer', type: 'single', label: 'Buffer between meetings', own: false, opts: [
+        { l: 'No buffer', p: 'no buffer' }, { l: '10 minutes', p: 'a 10 minute buffer' },
+        { l: '15 minutes', p: 'a 15 minute buffer' }, { l: '30 minutes', p: 'a 30 minute buffer' }] }
+    ] },
+  { id: 's3', title: 'How to reach me', q: 'How should people reach you, by urgency?',
+    lead: 'Three levels. Be strict about the first one and you will get your evenings back.',
+    groups: [
+      { id: 'fire', type: 'multi', label: 'What counts as on fire?', hint: 'Anything that needs you right now.', opts: [
+        'A client is about to leave', 'Money is stuck or a payment failed', 'Something legal or compliance related',
+        'A team member is blocked and cannot move', 'Something public is going wrong', 'A deadline will be missed today'] },
+      { id: 'fireCh', type: 'multi', label: 'On fire: reach me by', opts: ['Phone call', 'Text message', 'WhatsApp', 'Slack DM'] },
+      { id: 'todayCh', type: 'multi', label: 'Needs an answer today: use', opts: ['Text message', 'WhatsApp', 'Slack DM', 'Email marked URGENT', 'A quick call'] },
+      { id: 'waitCh', type: 'multi', label: 'Can wait: send it by', opts: ['Email', 'A Slack channel', 'A shared doc', 'The weekly summary'] },
+      { id: 'quiet', type: 'multi', label: 'Quiet rules', opts: [
+        'Nothing after 8pm unless it is on fire', 'Weekends are off unless it is on fire', 'No calls during my deep-work blocks',
+        'Sundays are fully off', 'Text me only if it is on fire'] }
+    ] },
+  { id: 's4', title: 'Decisions you can make without me', q: 'What can your Right Hand decide alone?',
+    lead: 'Every decision you pre-approve is one less message in your inbox.',
+    groups: [
+      { id: 'spend', type: 'single', label: 'Spending limit, per purchase', ownPh: 'Another limit, for example $750', opts: [
+        { l: '$0, ask me first', s: 'Spending needs my yes first. Nothing is pre-approved.' },
+        { l: '$50', p: '$50' }, { l: '$250', p: '$250' }, { l: '$500', p: '$500' }, { l: '$1,000', p: '$1,000' },
+        { l: '$2,500', p: '$2,500' }, { l: '$5,000', p: '$5,000' } ] },
+      { id: 'decide', type: 'multi', label: 'You can decide without me', hint: 'Pick everything you would never want to be asked about.', opts: [
+        'Reschedule my meetings', 'Decline meetings that do not fit my priorities', 'Reply to routine emails in my voice',
+        'Approve refunds under the limit', 'Book travel within my preferences', 'Pay recurring bills', 'Renew vendors under the limit',
+        'Choose between two options I have already approved', 'Fix small errors and tell me after', 'Re-prioritize my task list'] },
+      { id: 'gray', type: 'single', label: 'When it is a gray area', own: false, opts: [
+        { l: 'Decide, then tell me', s: 'When it is a gray area, make the call and tell me after.' },
+        { l: 'Ask me, with a recommendation', s: 'When it is a gray area, ask me, and bring your recommendation.' },
+        { l: 'Ask me first', s: 'When it is a gray area, ask me first. Do not act.' } ] }
+    ] },
+  { id: 's5', title: 'Decisions that are always mine', q: 'What never gets decided without you?',
+    lead: 'Be blunt. A short, clear list here saves you from the one mistake you cannot undo.',
+    groups: [
+      { id: 'mine', type: 'multi', label: 'Always mine', opts: [
+        'Pricing and discounts', 'Hiring and firing', 'Anything legal, contracts and signatures', 'Spend over the limit',
+        'Sensitive public statements and replies', 'Saying no to a key client', 'Investor and board communication',
+        'Changes to strategy or the offer', 'Anything involving my family'] }
+    ] },
+  { id: 's6', title: 'What to protect at all costs', q: 'What must be protected, no matter what?',
+    lead: 'People first, then time. These are the lines your Right Hand defends for you.',
+    groups: [
+      { id: 'people', type: 'multi', label: 'People to protect', opts: [
+        'My family', 'My key clients', 'My team and their morale', 'My reputation', 'My investors and partners', 'My advisors and mentors'] },
+      { id: 'time', type: 'multi', label: 'Time to protect', opts: [
+        'My deep-work blocks', 'My mornings', 'My workouts and health', 'My weekends', 'Dinner with my family', 'My vacation days'] }
+    ] },
+  { id: 's7', title: 'How to lose my trust', q: 'What are your pet peeves?',
+    lead: 'This is the most honest part of any manual. Name what burns you so nobody has to find out the hard way.',
+    groups: [
+      { id: 'peeves', type: 'multi', label: 'Fastest ways to lose my trust', opts: [
+        'Missing a deadline without warning me', 'Making me chase you for status', 'Asking me something I already told you',
+        'Surprises, especially bad ones', 'Guessing on something risky instead of asking', 'Asking me about small stuff you can decide',
+        'Typos in client messages', 'Being late to meetings', 'Hiding a mistake', 'Long, rambling updates', 'Gossip about the team'] }
+    ] },
+  { id: 's8', title: 'How I want updates', q: 'How do you want to hear from your Right Hand?',
+    lead: 'A good end-of-day report means you never have to ask "where are we on that?" again.',
+    groups: [
+      { id: 'when', type: 'single', label: 'End-of-day update, when', own: false, opts: [
+        { l: 'At 5pm my time', p: 'at 5pm my time' }, { l: 'At 6pm my time', p: 'at 6pm my time' },
+        { l: 'Before you sign off', p: 'before you sign off for the day' },
+        { l: 'Only when something changed', s: 'Send me an update only when something changed. No news means things are on track.' } ] },
+      { id: 'channel', type: 'multi', label: 'Send it by', opts: ['Email', 'Slack', 'WhatsApp', 'A shared doc', 'Notion'] },
+      { id: 'format', type: 'single', label: 'Format', own: false, opts: [
+        { l: 'Short bullets', p: 'short bullets, five lines at most' }, { l: 'Plain sentences', p: 'plain language with no jargon' },
+        { l: 'Detailed, with links', p: 'detailed, with links to everything' } ] },
+      { id: 'content', type: 'multi', label: 'Every update includes', opts: [
+        'What got done', 'What is blocked', 'What needs my decision', 'What is next', 'Numbers that changed', 'Questions, batched in one list'] },
+      { id: 'weekly', type: 'single', label: 'Weekly rhythm', own: false, opts: [
+        { l: 'Friday recap', s: 'Also send a recap of the week every Friday.' }, { l: 'Monday plan', s: 'Also send a plan for the week every Monday.' },
+        { l: 'Both', s: 'Also send a plan every Monday and a recap every Friday.' }, { l: 'No weekly update', s: 'No weekly summary is needed.' } ] }
+    ] },
+  { id: 's9', title: 'What I still do myself', q: 'Which of these still sit on your plate?',
+    lead: 'Tick what you still do yourself, then set hours per week. Your Week-1 Handoff List is built from this.',
+    special: 'tasks', groups: [] },
+  { id: 's10', title: 'Tools and where things live', q: 'What do you use, and where does everything live?',
+    lead: 'Pick your tools. Access is the first thing that slows down a new hire.',
+    groups: [
+      { id: 'mail', type: 'multi', label: 'Email and calendar', opts: ['Gmail and Google Calendar', 'Outlook', 'Apple Mail and Calendar'] },
+      { id: 'chat', type: 'multi', label: 'Chat', opts: ['Slack', 'WhatsApp', 'Microsoft Teams', 'iMessage', 'Telegram'] },
+      { id: 'work', type: 'multi', label: 'Projects and CRM', opts: ['Notion', 'ClickUp', 'Asana', 'Trello', 'Monday', 'HubSpot', 'GoHighLevel', 'Salesforce', 'Airtable', 'Google Sheets'] },
+      { id: 'files', type: 'multi', label: 'Files', opts: ['Google Drive', 'Dropbox', 'Notion', 'SharePoint'] },
+      { id: 'money', type: 'multi', label: 'Money', opts: ['QuickBooks', 'Xero', 'Stripe', 'Wave', 'Bill.com'] },
+      { id: 'pass', type: 'multi', label: 'Passwords', opts: ['1Password', 'Bitwarden', 'LastPass', 'Dashlane'] },
+      { id: 'where', type: 'text', multiline: true, label: 'Where do the important things live?', hint: 'For example: contracts in Drive under Legal. Brand assets in Notion.', ph: 'Contracts: Drive > Legal. Client notes: HubSpot.' }
+    ] },
+  { id: 's11', title: 'My definition of done', q: 'What does "done" mean to you?',
+    lead: 'Most handoffs fail because "done" meant two different things. Settle it once.',
+    groups: [
+      { id: 'done', type: 'multi', label: 'A task is done when', opts: [
+        'It is finished and I never have to follow up', 'The result is in the right place', 'The right people have been told',
+        'It is documented so anyone can repeat it', 'Anything still open is on my list with a next step', 'I have a confirmation in writing'] },
+      { id: 'quality', type: 'single', label: 'Quality bar', own: false, opts: [
+        { l: 'Good and on time', s: 'Good and on time beats perfect and late.' },
+        { l: 'Perfect for clients, good for internal', s: 'Anything a client sees must be perfect. Internal work only has to be good.' },
+        { l: 'Right the first time', s: 'Do it right the first time, even if it takes longer.' } ] },
+      { id: 'deadline', type: 'single', label: 'If I give no deadline, assume', own: false, opts: [
+        { l: 'End of today', p: 'the end of today' }, { l: '24 hours', p: '24 hours' }, { l: '48 hours', p: '48 hours' }, { l: 'End of the week', p: 'the end of the week' }] },
+      { id: 'bring', type: 'multi', label: 'When you bring me something', opts: [
+        'Bring a recommendation, not just a problem', 'Bring the options and your pick', 'Give me the context in two lines', 'Check it twice before it reaches me'] }
+    ] },
+  { id: 's12', title: 'Three things off my plate in week 1', q: 'What are the first three things to take off your plate?',
+    lead: 'Be specific. "Handle my inbox" is a start. "Clear my inbox daily and flag only what needs me" is a handoff.',
+    special: 'picks', groups: [] }
+];
+
+var PROPER = { Slack: 1, Gmail: 1, Notion: 1, Asana: 1, Trello: 1, Monday: 1, Airtable: 1, Stripe: 1, Zoom: 1, Outlook: 1, Dropbox: 1, Telegram: 1, Teams: 1, Xero: 1, Wave: 1, Google: 1, Apple: 1, Microsoft: 1, Eastern: 1, Central: 1, Mountain: 1, Pacific: 1, Friday: 1, Monday: 1, Sunday: 1 };
+
+function clean(s) { return (typeof s === 'string') ? s.replace(/\s+/g, ' ').trim() : ''; }
+function cap(s) { s = clean(s); return s ? s.charAt(0).toUpperCase() + s.slice(1) : ''; }
+function softLower(s) {
+  s = clean(s);
+  var m = /^([A-Za-z]+)/.exec(s);
+  if (!m) return s;
+  var w = m[1];
+  if (PROPER[w]) return s;
+  if (/^[A-Z][a-z]*$/.test(w)) return s.charAt(0).toLowerCase() + s.slice(1);
+  return s;
+}
+function sentence(s) { s = cap(s); if (!s) return ''; return /[.!?]$/.test(s) ? s : s + '.'; }
+function joinList(arr, word) {
+  arr = (arr || []).filter(Boolean);
+  word = word || 'and';
+  if (arr.length <= 1) return arr.join('');
+  if (arr.length === 2) return arr[0] + ' ' + word + ' ' + arr[1];
+  return arr.slice(0, -1).join(', ') + ', ' + word + ' ' + arr[arr.length - 1];
+}
+function fmtHours(n) {
+  n = Number(n);
+  if (!isFinite(n)) return '0';
+  var r = Math.round(n * 10) / 10;
+  return (r % 1 === 0) ? String(r) : r.toFixed(1);
+}
+function slugify(s) { return clean(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
+
+function optLabel(o) { return typeof o === 'string' ? o : o.l; }
+function findGroup(sid, gid) {
+  for (var i = 0; i < STEPS.length; i++) {
+    if (STEPS[i].id !== sid) continue;
+    for (var j = 0; j < STEPS[i].groups.length; j++) if (STEPS[i].groups[j].id === gid) return STEPS[i].groups[j];
+  }
+  return null;
+}
+function optInfo(sid, gid, label) {
+  var g = findGroup(sid, gid);
+  if (g && g.opts) {
+    for (var i = 0; i < g.opts.length; i++) {
+      var o = g.opts[i];
+      if (optLabel(o) === label) return (typeof o === 'string') ? { l: o, p: o } : { l: o.l, p: o.p || o.l, s: o.s };
+    }
+  }
+  return { l: label, p: label };
+}
+function key(sid, gid) { return sid + '_' + gid; }
+function arr(v) { return Array.isArray(v) ? v.filter(function (x) { return typeof x === 'string' && x; }) : []; }
+function txt(a, sid, gid) { return clean(a[key(sid, gid)]); }
+function ownTxt(a, sid, gid) { return clean(a[key(sid, gid) + '_own']); }
+function chips(a, sid, gid) { return arr(a[key(sid, gid)]); }
+function splitOwn(s) { return String(s || '').split(/[\n;]+/).map(clean).filter(Boolean).map(cap); }
+// all selected items of a multi group, own entries last
+function items(a, sid, gid) { return chips(a, sid, gid).concat(splitOwn(a[key(sid, gid) + '_own'])); }
+// the single chosen option (own overrides), as optInfo or null
+function pick(a, sid, gid) {
+  var c = chips(a, sid, gid)[0];
+  return c ? optInfo(sid, gid, c) : null;
+}
+
+function computeHandoff(a) {
+  a = a || {};
+  var m = (a.s9_tasks && typeof a.s9_tasks === 'object') ? a.s9_tasks : {};
+  var tasks = [];
+  TASKS.forEach(function (t, i) {
+    var h = Number(m[t.id]);
+    if (isFinite(h) && h > 0) tasks.push({ id: t.id, label: t.label, hours: h, idx: i });
+  });
+  var on = clean(a.s9_ownName);
+  if (on) {
+    var oh = (a.s9_ownHours === undefined || a.s9_ownHours === null || a.s9_ownHours === '') ? 1 : Number(a.s9_ownHours);
+    if (isFinite(oh) && oh > 0) tasks.push({ id: 'own', label: cap(on), hours: oh, idx: 99 });
+  }
+  tasks.sort(function (x, y) { return (y.hours - x.hours) || (x.idx - y.idx); });
+  var top3 = tasks.slice(0, 3);
+  var total = 0, top3Total = 0;
+  tasks.forEach(function (t) { total += t.hours; });
+  top3.forEach(function (t) { top3Total += t.hours; });
+  var perMonth = function (h) { return Math.round(h * 52 / 12 * 10) / 10; };
+  return { tasks: tasks, top3: top3, total: total, top3Total: top3Total, month: perMonth(total), top3Month: perMonth(top3Total) };
+}
+
+function P(text) { return text ? { kind: 'p', text: text } : null; }
+function L(label, list, ordered) { return (list && list.length) ? { kind: 'list', label: label, items: list, ordered: !!ordered } : null; }
+function compact(b) { return b.filter(Boolean); }
+
+var SECTIONS = [
+  { step: 's1', title: 'Who I am', build: function (a) {
+    var name = txt(a, 's1', 'name'), co = txt(a, 's1', 'company'), line = txt(a, 's1', 'line');
+    var type = pick(a, 's1', 'type'), team = pick(a, 's1', 'team');
+    var s = [];
+    if (name && co) s.push("I'm " + name + ". I run " + co + ".");
+    else if (name) s.push("I'm " + name + ".");
+    else if (co) s.push("This manual is for " + co + ".");
+    if (type) s.push((co || 'My business') + ' is ' + type.p + '.');
+    if (team) s.push(team.s || '');
+    return compact([P(s.join(' ')), line ? P('What we do: ' + line.replace(/^./, function (c) { return c.toLowerCase(); }).replace(/[.!?]+$/, '') + '.') : null]);
+  } },
+  { step: 's2', title: 'How my week runs', build: function (a) {
+    var hours = pick(a, 's2', 'hours');
+    var tzOwn = ownTxt(a, 's2', 'tz'), tz = pick(a, 's2', 'tz');
+    var ml = pick(a, 's2', 'mlen'), bf = pick(a, 's2', 'buffer');
+    var s = [];
+    if (hours) s.push(sentence('I work ' + hours.p));
+    if (tzOwn) s.push('My time zone is ' + tzOwn + '. Schedule everything in it unless I say otherwise.');
+    else if (tz) s.push('My time zone is ' + tz.p + '. Schedule everything in it unless I say otherwise.');
+    var meet = '';
+    if (ml && bf) meet = 'Meetings default to ' + ml.p + ', with ' + bf.p + ' between them.';
+    else if (ml) meet = 'Meetings default to ' + ml.p + '.';
+    else if (bf) meet = 'Leave ' + (bf.p === 'no buffer' ? 'no buffer' : bf.p) + ' between meetings.';
+    if (meet) s.push(meet);
+    return compact([P(s.join(' ')), L('Never book over these deep-work blocks:', items(a, 's2', 'deep'))]);
+  } },
+  { step: 's3', title: 'How to reach me', build: function (a) {
+    var lowAll = function (g) { return chips(a, 's3', g).map(softLower).concat(splitOwn(a['s3_' + g + '_own']).map(softLower)); };
+    var fire = lowAll('fireCh'), today = lowAll('todayCh'), wait = lowAll('waitCh');
+    var lines = [];
+    if (fire.length) lines.push('On fire: reach me by ' + joinList(fire, 'or') + '. Interrupt whatever I am doing.');
+    if (today.length) lines.push('Needs an answer today: use ' + joinList(today, 'or') + '.');
+    if (wait.length) lines.push('Can wait: send it by ' + joinList(wait, 'or') + '. No need to interrupt me.');
+    return compact([L('It is on fire when:', items(a, 's3', 'fire')), P(lines.join(' ')), L('Quiet rules:', items(a, 's3', 'quiet'))]);
+  } },
+  { step: 's4', title: 'What you can decide without me', build: function (a) {
+    var sp = pick(a, 's4', 'spend'), spOwn = ownTxt(a, 's4', 'spend'), gray = pick(a, 's4', 'gray');
+    var s = [];
+    if (spOwn) s.push(/\d/.test(spOwn) ? 'You can spend up to ' + spOwn + ' per purchase without asking me.' : sentence(spOwn));
+    else if (sp) s.push(sp.s ? sp.s : 'You can spend up to ' + sp.p + ' per purchase without asking me.');
+    if (gray) s.push(gray.s || '');
+    return compact([L('You can decide without me:', items(a, 's4', 'decide')), P(s.join(' '))]);
+  } },
+  { step: 's5', title: 'What is always mine', accent: true, build: function (a) {
+    var list = items(a, 's5', 'mine');
+    return compact([L('Always mine:', list), list.length ? P('If a request touches any of these, stop and bring it to me.') : null]);
+  } },
+  { step: 's6', title: 'What I protect', build: function (a) {
+    var people = items(a, 's6', 'people'), time = items(a, 's6', 'time');
+    return compact([
+      (people.length || time.length) ? P('If a request puts any of these at risk, the answer is no until you have talked to me.') : null,
+      L('Protect these people:', people), L('Protect this time:', time)]);
+  } },
+  { step: 's7', title: 'How to lose my trust', build: function (a) {
+    return compact([L('These are the fastest ways to lose my trust:', items(a, 's7', 'peeves'))]);
+  } },
+  { step: 's8', title: 'How I want updates', build: function (a) {
+    var when = pick(a, 's8', 'when'), ch = items(a, 's8', 'channel'), fm = pick(a, 's8', 'format'), wk = pick(a, 's8', 'weekly');
+    var s = [];
+    if (when) s.push(when.s ? when.s : 'Send me an end-of-day update ' + when.p + '.');
+    if (ch.length) s.push('Send it by ' + joinList(ch.map(softLower), 'or') + '.');
+    if (fm) s.push('Keep it ' + fm.p + '.');
+    if (wk) s.push(wk.s || '');
+    return compact([P(s.join(' ')), L('Every update includes:', items(a, 's8', 'content'))]);
+  } },
+  { step: 's9', title: 'What I still do myself', build: function (a) {
+    var ho = computeHandoff(a);
+    if (!ho.tasks.length) return [];
+    var list = ho.tasks.map(function (t) { return t.label + ' (' + fmtHours(t.hours) + ' hrs/week)'; });
+    return compact([L('Still on my plate, biggest first:', list), P('Together that is ' + fmtHours(ho.total) + ' hours of my week. Take them from the top.')]);
+  } },
+  { step: 's10', title: 'My tools and where things live', build: function (a) {
+    var rows = [['Email and calendar', 'mail'], ['Chat', 'chat'], ['Projects and CRM', 'work'], ['Files', 'files'], ['Money', 'money'], ['Passwords', 'pass']];
+    var out = [];
+    rows.forEach(function (r) {
+      var v = items(a, 's10', r[1]);
+      if (v.length) out.push(r[0] + ': ' + v.join(', '));
+    });
+    var where = txt(a, 's10', 'where');
+    return compact([L('Tools I use:', out), where ? P('Where things live: ' + where) : null]);
+  } },
+  { step: 's11', title: 'What done means', build: function (a) {
+    var q = pick(a, 's11', 'quality'), d = pick(a, 's11', 'deadline');
+    var s = [];
+    if (q) s.push(q.s || '');
+    if (d) s.push('If I give no deadline, assume ' + d.p + '.');
+    return compact([L('A task is done when:', items(a, 's11', 'done')), P(s.join(' ')), L('When you bring me something:', items(a, 's11', 'bring'))]);
+  } },
+  { step: 's12', title: 'Start here in week one', build: function (a) {
+    var picks = [txt(a, 's12', '1'), txt(a, 's12', '2'), txt(a, 's12', '3')].filter(Boolean).map(cap);
+    return compact([L('In week one, take these three off my plate first:', picks, true)]);
+  } }
+];
+
+function buildManual(a, dateStr) {
+  a = a || {};
+  var name = txt(a, 's1', 'name'), co = txt(a, 's1', 'company');
+  var secs = [];
+  SECTIONS.forEach(function (sec) {
+    var blocks = sec.build(a);
+    if (blocks && blocks.length) secs.push({ step: sec.step, title: sec.title, accent: !!sec.accent, blocks: blocks });
+  });
+  secs.forEach(function (s, i) { s.num = (i + 1 < 10 ? '0' : '') + (i + 1); });
+  return {
+    title: name ? (name + "'s Founder Manual") : 'My Founder Manual',
+    company: co,
+    sub: (co ? co + ' · ' : '') + 'Updated ' + (dateStr || ''),
+    intro: secs.length ? 'This is how I work and how to work with me. Read it before your first day, and come back to it when something feels unclear.' : '',
+    sections: secs
+  };
+}
+
+function manualToMarkdown(m) {
+  var out = ['# ' + m.title, ''];
+  out.push('_' + m.sub + '_', '');
+  if (m.intro) out.push(m.intro, '');
+  m.sections.forEach(function (s) {
+    out.push('## ' + s.num + '. ' + s.title, '');
+    s.blocks.forEach(function (b) {
+      if (b.kind === 'p') { out.push(b.text, ''); }
+      else {
+        out.push('**' + b.label + '**', '');
+        b.items.forEach(function (it, i) { out.push((b.ordered ? (i + 1) + '. ' : '- ') + it); });
+        out.push('');
+      }
+    });
+  });
+  if (!m.sections.length) out.push('_No answers yet._', '');
+  out.push('---', '', 'Built with The Founder Manual Builder by Pareto Talent.');
+  return out.join('\n').replace(/\n{3,}/g, '\n\n') + '\n';
+}
+/*PURE-END*/
+
+/* ---------- state ---------- */
+var KEY = 'pt-founder-manual-v1';
+var state = { view: 'intro', step: 0, ans: {}, saved: false };
+var app = document.getElementById('app');
+var live = document.getElementById('live');
+
+function hasData(a) {
+  for (var k in a) {
+    if (!Object.prototype.hasOwnProperty.call(a, k)) continue;
+    var v = a[k];
+    if (Array.isArray(v) && v.length) return true;
+    if (typeof v === 'string' && clean(v)) return true;
+    if (v && typeof v === 'object' && !Array.isArray(v) && Object.keys(v).length) return true;
+  }
+  return false;
+}
+function load() {
+  try {
+    var raw = window.localStorage.getItem(KEY);
+    if (!raw) return;
+    var o = JSON.parse(raw);
+    if (o && typeof o === 'object') {
+      if (o.ans && typeof o.ans === 'object') state.ans = o.ans;
+      var s = parseInt(o.step, 10);
+      if (isFinite(s) && s >= 0 && s < STEPS.length) state.step = s;
+      state.saved = hasData(state.ans);
+      state.done = !!o.done;
+    }
+  } catch (e) { /* storage unavailable: carry on without it */ }
+}
+function save() {
+  try { window.localStorage.setItem(KEY, JSON.stringify({ ans: state.ans, step: state.step, done: state.view === 'result' || !!state.done })); } catch (e) { /* ignore */ }
+}
+function wipe() {
+  try { window.localStorage.removeItem(KEY); } catch (e) { /* ignore */ }
+}
+function announce(msg) { live.textContent = ''; setTimeout(function () { live.textContent = msg; }, 30); }
+
+/* ---------- dom helper ---------- */
+function h(tag, attrs) {
+  var el = document.createElement(tag);
+  if (attrs) {
+    Object.keys(attrs).forEach(function (k) {
+      var v = attrs[k];
+      if (v === null || v === undefined || v === false) return;
+      if (k === 'class') el.className = v;
+      else if (k === 'text') el.textContent = v;
+      else if (k.slice(0, 2) === 'on') el.addEventListener(k.slice(2), v);
+      else el.setAttribute(k, v === true ? '' : v);
+    });
+  }
+  for (var i = 2; i < arguments.length; i++) add(el, arguments[i]);
+  return el;
+}
+function add(el, c) {
+  if (c === null || c === undefined || c === false) return;
+  if (Array.isArray(c)) { c.forEach(function (x) { add(el, x); }); return; }
+  el.appendChild(typeof c === 'string' ? document.createTextNode(c) : c);
+}
+function mount(node, title, focusSel) {
+  app.textContent = '';
+  app.appendChild(node);
+  window.scrollTo(0, 0);
+  var f = focusSel ? app.querySelector(focusSel) : null;
+  if (f) f.focus({ preventScroll: true });
+  if (title) announce(title);
+}
+
+/* ---------- views ---------- */
+function go(view, step) {
+  state.view = view;
+  if (typeof step === 'number') state.step = step;
+  save();
+  render();
+}
+function render() {
+  if (state.view === 'intro') renderIntro();
+  else if (state.view === 'step') renderStep();
+  else renderResult();
+}
+
+function renderIntro() {
+  var bullets = [
+    ['A one-page Founder Manual', 'Your rules, written so a Right Hand, a new hire or your AI can run your week from day one.'],
+    ['A copy-and-paste AI context block', 'The same manual as clean Markdown for ChatGPT or Claude custom instructions.'],
+    ['A Week-1 Handoff List', 'The top 3 tasks to hand off first, and the hours a week you get back.']
+  ];
+  var cont = state.saved && !state.done ? h('button', { class: 'btn btn-ghost', type: 'button', onclick: function () { go('step', state.step); } }, 'Continue where I left off') : null;
+  var seeIt = state.saved && state.done ? h('button', { class: 'btn btn-ghost', type: 'button', onclick: function () { go('result'); } }, 'See my manual') : null;
+  var node = h('div', { class: 'wrap intro' },
+    h('div', { class: 'card' },
+      h('p', { class: 'eyebrow' }, '12 short steps. Mostly taps.'),
+      h('h1', { tabindex: '-1', id: 'introTitle' }, 'Get Your Business Out of Your Head in 10 Minutes'),
+      h('p', { class: 'sub' }, 'The Founder Manual Builder'),
+      h('ul', null, bullets.map(function (b, i) {
+        return h('li', null, h('span', { class: 'n', 'aria-hidden': 'true' }, String(i + 1)), h('div', null, h('b', null, b[0]), h('span', { class: 'muted' }, b[1])));
+      })),
+      h('div', { class: 'actions' },
+        h('button', { class: 'btn btn-primary', type: 'button', id: 'startBtn', onclick: function () { go('step', 0); } }, 'Start →'),
+        cont, seeIt),
+      h('p', { class: 'fine' }, 'No signup. Nothing leaves your browser.')));
+  mount(node, 'The Founder Manual Builder', '#introTitle');
+}
+
+function getChips(k) { return Array.isArray(state.ans[k]) ? state.ans[k] : []; }
+function setAns(k, v) { state.ans[k] = v; state.saved = true; state.done = false; save(); }
+
+function chipGroup(S, g) {
+  var k = key(S.id, g.id), single = g.type === 'single';
+  var labelId = 'lg_' + k;
+  var wrap = h('div', { class: 'chips' });
+  g.opts.forEach(function (o) {
+    var lab = optLabel(o);
+    var btn = h('button', { type: 'button', class: 'chip', 'aria-pressed': getChips(k).indexOf(lab) > -1 ? 'true' : 'false', onclick: function () {
+      var cur = getChips(k).slice(), i = cur.indexOf(lab);
+      if (i > -1) cur.splice(i, 1);
+      else if (single) cur = [lab];
+      else cur.push(lab);
+      setAns(k, cur);
+      Array.prototype.forEach.call(wrap.children, function (c) { c.setAttribute('aria-pressed', cur.indexOf(c.getAttribute('data-l')) > -1 ? 'true' : 'false'); });
+    } }, lab);
+    btn.setAttribute('data-l', lab);
+    wrap.appendChild(btn);
+  });
+  var fs = h('div', { class: 'group', role: 'group', 'aria-labelledby': labelId },
+    h('div', { id: labelId, class: 'lab-legend', style: 'font-family:var(--f-display);font-weight:700;font-size:17px;letter-spacing:-0.02em;margin-bottom:4px' }, g.label),
+    h('span', { class: 'hint' }, g.hint || (single ? 'Pick one.' : 'Pick any that apply.')),
+    wrap);
+  if (g.own !== false) {
+    var oid = 'f_' + k + '_own';
+    fs.appendChild(h('div', { class: 'field', style: 'margin-bottom:0' },
+      h('label', { class: 'sr-only', for: oid }, g.label + ': add your own'),
+      h('input', { id: oid, type: 'text', maxlength: '160', placeholder: g.ownPh || 'Add your own', autocomplete: 'off', value: state.ans[k + '_own'] || '', oninput: function (e) { setAns(k + '_own', e.target.value); } })));
+  }
+  return fs;
+}
+
+function textField(S, g) {
+  var k = key(S.id, g.id), id = 'f_' + k;
+  var input = g.multiline
+    ? h('textarea', { id: id, rows: '3', maxlength: '400', placeholder: g.ph || '', autocomplete: 'off', oninput: function (e) { setAns(k, e.target.value); } })
+    : h('input', { id: id, type: 'text', maxlength: '160', placeholder: g.ph || '', autocomplete: g.ac || 'off', oninput: function (e) { setAns(k, e.target.value); } });
+  input.value = state.ans[k] || '';
+  return h('div', { class: 'field' }, h('label', { class: 'lab', for: id }, g.label), g.hint ? h('span', { class: 'hint' }, g.hint) : null, input);
+}
+
+function stepper(getV, setV, name) {
+  var out = h('output', { 'aria-live': 'polite' });
+  var minus = h('button', { type: 'button', 'aria-label': 'Less time on ' + name }, '−');
+  var plus = h('button', { type: 'button', 'aria-label': 'More time on ' + name }, '+');
+  function paint() { out.textContent = fmtHours(getV()) + ' hrs/wk'; }
+  minus.addEventListener('click', function () { setV(Math.max(0.5, getV() - 0.5)); paint(); });
+  plus.addEventListener('click', function () { setV(Math.min(60, getV() + 0.5)); paint(); });
+  paint();
+  return h('div', { class: 'stepper' }, minus, out, plus);
+}
+
+function tasksView(totalEl) {
+  function tasksMap() { if (!state.ans.s9_tasks || typeof state.ans.s9_tasks !== 'object') state.ans.s9_tasks = {}; return state.ans.s9_tasks; }
+  function refresh() {
+    var ho = computeHandoff(state.ans);
+    totalEl.textContent = '';
+    if (!ho.tasks.length) { totalEl.appendChild(document.createTextNode('Tick a task to start your total.')); return; }
+    totalEl.appendChild(document.createTextNode('Total so far: '));
+    totalEl.appendChild(h('b', null, fmtHours(ho.total) + ' hrs/week'));
+    totalEl.appendChild(document.createTextNode(' · about ' + fmtHours(ho.month) + ' hrs/month'));
+  }
+  var list = h('div', { class: 'tasks' });
+  TASKS.forEach(function (t) {
+    var row = h('div', { class: 'task' });
+    var cid = 'f_s9_' + t.id;
+    var cb = h('input', { type: 'checkbox', id: cid });
+    cb.checked = Number(tasksMap()[t.id]) > 0;
+    var slot = h('div');
+    function paint() {
+      slot.textContent = '';
+      row.className = 'task' + (cb.checked ? ' on' : '');
+      if (cb.checked) slot.appendChild(stepper(function () { return Number(tasksMap()[t.id]) || 1; }, function (v) { tasksMap()[t.id] = v; setAns('s9_tasks', tasksMap()); refresh(); }, t.label));
+    }
+    cb.addEventListener('change', function () {
+      var m = tasksMap();
+      if (cb.checked) m[t.id] = m[t.id] > 0 ? m[t.id] : 1; else delete m[t.id];
+      setAns('s9_tasks', m); paint(); refresh();
+    });
+    row.appendChild(h('label', { for: cid }, cb, t.label));
+    row.appendChild(slot);
+    paint();
+    list.appendChild(row);
+  });
+  // own task
+  var ownRow = h('div', { class: 'task' });
+  var ownInput = h('input', { type: 'text', id: 'f_s9_own', maxlength: '80', placeholder: 'Something else you still do yourself', autocomplete: 'off' });
+  ownInput.value = state.ans.s9_ownName || '';
+  var ownSlot = h('div');
+  function ownPaint() {
+    ownSlot.textContent = '';
+    var has = !!clean(ownInput.value);
+    ownRow.className = 'task' + (has ? ' on' : '');
+    if (has) {
+      if (!(Number(state.ans.s9_ownHours) > 0)) state.ans.s9_ownHours = 1;
+      ownSlot.appendChild(stepper(function () { return Number(state.ans.s9_ownHours) || 1; }, function (v) { setAns('s9_ownHours', v); refresh(); }, 'your own task'));
+    }
+  }
+  ownInput.addEventListener('input', function () { setAns('s9_ownName', ownInput.value); ownPaint(); refresh(); });
+  ownRow.className = 'task task-own';
+  ownRow.appendChild(h('div', { style: 'flex:1 1 220px;min-width:0' }, h('label', { class: 'sr-only', for: 'f_s9_own' }, 'Add your own task'), ownInput));
+  ownRow.appendChild(ownSlot);
+  ownPaint();
+  list.appendChild(ownRow);
+  refresh();
+  return list;
+}
+
+function picksView() {
+  var ho = computeHandoff(state.ans);
+  var inputs = [];
+  var box = h('div');
+  if (ho.tasks.length) {
+    var chipsBox = h('div', { class: 'chips' });
+    ho.tasks.slice(0, 6).forEach(function (t) {
+      chipsBox.appendChild(h('button', { type: 'button', class: 'chip', onclick: function () {
+        var free = inputs.filter(function (i) { return !clean(i.value); })[0];
+        if (!free) { announce('All three slots are full. Edit one first.'); return; }
+        free.value = t.label;
+        setAns(free.getAttribute('data-k'), t.label);
+        free.focus();
+      } }, '+ ' + t.label));
+    });
+    box.appendChild(h('div', { class: 'group' },
+      h('div', { style: 'font-family:var(--f-display);font-weight:700;font-size:17px;letter-spacing:-0.02em;margin-bottom:4px' }, 'Your biggest time sinks'),
+      h('span', { class: 'hint' }, 'From step 9. Tap one to drop it into the next free slot, then make it specific.'), chipsBox));
+  }
+  var phs = ['Clear my inbox daily and flag only what needs me', 'Own my calendar and protect my deep-work blocks', 'Send invoices and chase late payments'];
+  [1, 2, 3].forEach(function (n) {
+    var k = key('s12', String(n)), id = 'f_' + k;
+    var inp = h('input', { id: id, type: 'text', maxlength: '200', placeholder: phs[n - 1], autocomplete: 'off', 'data-k': k, oninput: function (e) { setAns(k, e.target.value); } });
+    inp.value = state.ans[k] || '';
+    inputs.push(inp);
+    box.appendChild(h('div', { class: 'field' }, h('label', { class: 'lab', for: id }, 'Handoff ' + n), inp));
+  });
+  return box;
+}
+
+function renderStep() {
+  var i = state.step, S = STEPS[i], n = STEPS.length;
+  var label = 'Step ' + (i + 1) + ' of ' + n;
+  var body = h('div');
+  if (S.special === 'tasks') {
+    var total = h('div', { class: 'total', 'aria-live': 'polite' });
+    body.appendChild(tasksView(total));
+    body.appendChild(total);
+  } else if (S.special === 'picks') {
+    body.appendChild(picksView());
+  } else {
+    var row = null;
+    S.groups.forEach(function (g) {
+      if (g.type === 'text') body.appendChild(textField(S, g));
+      else body.appendChild(chipGroup(S, g));
+    });
+    // pair name + company on wide screens
+    if (S.id === 's1') {
+      var f = body.children;
+      var pair = h('div', { class: 'two' }, f[0], f[0]);
+      body.insertBefore(pair, body.firstChild);
+    }
+  }
+  var last = i === n - 1;
+  var node = h('div', { class: 'wrap step' },
+    h('div', { class: 'prog' },
+      h('div', { class: 'prog-top' }, h('span', { class: 'prog-label' }, label), h('span', { class: 'prog-title' }, S.title)),
+      h('div', { class: 'bar', role: 'progressbar', 'aria-valuemin': '1', 'aria-valuemax': String(n), 'aria-valuenow': String(i + 1), 'aria-valuetext': label, 'aria-label': 'Progress' },
+        h('div', { class: 'fill', style: 'width:' + ((i + 1) / n * 100) + '%' }))),
+    h('div', { class: 'card' },
+      h('h1', { tabindex: '-1', id: 'stepTitle' }, S.q),
+      h('p', { class: 'lead' }, S.lead),
+      body),
+    h('div', { class: 'nav' },
+      h('button', { class: 'btn btn-quiet', type: 'button', onclick: back }, '← Back'),
+      h('button', { class: 'btn btn-primary', type: 'button', id: 'nextBtn', onclick: next }, last ? 'Build my manual →' : 'Next →')),
+    h('p', { class: 'keys no-print' }, 'Tip: press Enter in a text box to continue.'));
+  mount(node, label + ': ' + S.title, '#stepTitle');
+}
+function next() {
+  if (state.step >= STEPS.length - 1) { state.done = true; go('result'); }
+  else go('step', state.step + 1);
+}
+function back() {
+  if (state.step <= 0) go('intro'); else go('step', state.step - 1);
+}
+
+/* ---------- result ---------- */
+function dateStr() {
+  try { return new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }); } catch (e) { return ''; }
+}
+
+function renderManual(m) {
+  var art = h('article', { id: 'manual', 'aria-label': 'Your Founder Manual' },
+    h('div', { class: 'm-eyebrow' }, 'Founder Manual'),
+    h('h2', { class: 'm-title', style: 'font-family:var(--f-display)' }, m.title),
+    h('p', { class: 'm-sub' }, m.sub),
+    h('hr', { class: 'm-rule' }));
+  if (!m.sections.length) {
+    art.appendChild(h('p', { class: 'empty' }, 'Your manual is empty so far. Choose "Edit my answers" and fill in a few steps. Even three answers make a useful page.'));
+  } else {
+    art.appendChild(h('p', { class: 'm-intro' }, m.intro));
+    var wrap = h('div', { class: 'm-sections' });
+    m.sections.forEach(function (s) {
+      var sec = h('section', { class: 'm-sec' + (s.accent ? ' accent' : '') },
+        h('div', { class: 'm-sec-top' }, h('span', { class: 'm-num' }, s.num), h('h3', null, s.title)));
+      s.blocks.forEach(function (b) {
+        if (b.kind === 'p') sec.appendChild(h('p', null, b.text));
+        else {
+          sec.appendChild(h('span', { class: 'm-lab' }, b.label));
+          sec.appendChild(h(b.ordered ? 'ol' : 'ul', null, b.items.map(function (it) { return h('li', null, it); })));
+        }
+      });
+      wrap.appendChild(sec);
+    });
+    art.appendChild(wrap);
+  }
+  art.appendChild(h('p', { class: 'm-foot' }, 'Built with The Founder Manual Builder by Pareto Talent.'));
+  return art;
+}
+
+function renderHandoff() {
+  var ho = computeHandoff(state.ans);
+  var card = h('section', { class: 'card hand no-print', 'aria-labelledby': 'handTitle' },
+    h('p', { class: 'eyebrow' }, 'Output 3'),
+    h('h2', { id: 'handTitle' }, 'Your Week-1 Handoff List'));
+  if (!ho.tasks.length) {
+    card.appendChild(h('p', { class: 'desc' }, 'This is where your first three handoffs show up, ranked by the hours they take from you each week.'));
+    card.appendChild(h('p', { class: 'empty' }, 'Nothing ticked yet. Go back to step 9, tick the tasks you still do yourself and set the hours. Your list and your hours recovered appear here, live.'));
+    card.appendChild(h('div', { class: 'actions-row' }, h('button', { class: 'btn btn-ghost btn-sm', type: 'button', onclick: function () { go('step', 8); } }, 'Go to step 9')));
+    return card;
+  }
+  card.appendChild(h('p', { class: 'desc' }, 'Hand these off first. They take the most of your week, so they give you the most back.'));
+  var ol = h('ol', null, ho.top3.map(function (t) {
+    return h('li', null, h('span', { class: 't' }, t.label), h('span', { class: 'hrs' }, fmtHours(t.hours) + ' hrs/wk'));
+  }));
+  var stats = h('div', { class: 'stats' },
+    h('div', { class: 'stat' }, h('div', { class: 'v' }, fmtHours(ho.top3Total) + ' hrs'), h('div', { class: 'k' }, 'back each week from these ' + ho.top3.length + (ho.top3.length === 1 ? ' task' : ' tasks'))),
+    h('div', { class: 'stat' }, h('div', { class: 'v' }, fmtHours(ho.total) + ' hrs/week'), h('div', { class: 'k' }, 'if you hand off everything you ticked, about ' + fmtHours(ho.month) + ' hrs a month')));
+  card.appendChild(h('div', { class: 'hand-grid' }, ol, stats));
+  var picks = [txt(state.ans, 's12', '1'), txt(state.ans, 's12', '2'), txt(state.ans, 's12', '3')].filter(Boolean);
+  if (picks.length) {
+    card.appendChild(h('div', { class: 'also' }, h('b', null, 'You also named these for week one:'), h('ul', null, picks.map(function (p) { return h('li', null, cap(p)); }))));
+  }
+  card.appendChild(h('p', { class: 'note' }, 'Every number comes from your own answers in step 9. Per month is hours a week times 52, divided by 12.'));
+  return card;
+}
+
+function copyText(text, statusEl) {
+  function ok() { statusEl.textContent = 'Copied. Paste it into your AI tool.'; setTimeout(function () { statusEl.textContent = ''; }, 4000); }
+  function fallback() {
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.top = '-1000px'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    var done = false;
+    try { done = document.execCommand('copy'); } catch (e) { done = false; }
+    document.body.removeChild(ta);
+    if (done) ok(); else statusEl.textContent = 'Copy blocked by your browser. Select the text above and copy it by hand.';
+  }
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText && window.isSecureContext) navigator.clipboard.writeText(text).then(ok, fallback);
+    else fallback();
+  } catch (e) { fallback(); }
+}
+
+function download(name, text) {
+  try {
+    var blob = new Blob([text], { type: 'text/markdown;charset=utf-8' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url; a.download = name; document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(url); }, 1500);
+  } catch (e) { announce('Download is not available in this browser. Use Copy as AI context instead.'); }
+}
+
+function renderResult() {
+  var m = buildManual(state.ans, dateStr());
+  var md = manualToMarkdown(m);
+  var base = slugify(txt(state.ans, 's1', 'name')) || 'my';
+  var status = h('span', { class: 'copied', 'aria-live': 'polite' });
+  var resetBtn = h('button', { class: 'btn btn-danger btn-sm', type: 'button' }, 'Start over');
+  var armed = false, timer = null;
+  resetBtn.addEventListener('click', function () {
+    if (!armed) {
+      armed = true; resetBtn.textContent = 'Tap again to erase everything';
+      timer = setTimeout(function () { armed = false; resetBtn.textContent = 'Start over'; }, 4000);
+      return;
+    }
+    clearTimeout(timer);
+    state.ans = {}; state.saved = false; state.done = false; state.step = 0; wipe();
+    go('intro');
+  });
+
+  var node = h('div', { class: 'wrap wide' },
+    h('div', { class: 'res-head no-print' },
+      h('p', { class: 'eyebrow' }, 'Done. Nothing was sent anywhere.'),
+      h('h1', { tabindex: '-1', id: 'resTitle' }, 'Your Founder Manual is ready'),
+      h('p', { class: 'muted' }, 'Hand it to a Right Hand, a new hire or your AI. It still works the day you forget to explain something.'),
+      h('div', { class: 'actions-row' },
+        h('button', { class: 'btn btn-primary btn-sm', type: 'button', onclick: function () { window.print(); } }, 'Save as PDF'),
+        h('button', { class: 'btn btn-ghost btn-sm', type: 'button', onclick: function () { download('founder-manual-' + base + '.md', md); } }, 'Download .md'),
+        h('button', { class: 'btn btn-quiet btn-sm', type: 'button', onclick: function () { state.done = false; go('step', 0); } }, 'Edit my answers'),
+        resetBtn),
+      h('p', { class: 'note', style: 'margin-top:-8px' }, 'Save as PDF opens your print dialog. Choose "Save as PDF" as the printer. Only the manual prints.')),
+    h('div', { class: 'stack' },
+      renderManual(m),
+      renderHandoff(),
+      h('section', { class: 'card no-print', 'aria-labelledby': 'aiTitle' },
+        h('p', { class: 'eyebrow' }, 'Output 2'),
+        h('h2', { id: 'aiTitle' }, 'Copy as AI context'),
+        h('p', { class: 'desc' }, 'Paste this into ChatGPT custom instructions, a Claude project or Claude Code as CLAUDE.md. Your AI will work the way you would.'),
+        h('div', { class: 'md-bar' },
+          h('button', { class: 'btn btn-primary btn-sm', type: 'button', onclick: function () { copyText(md, status); } }, 'Copy'),
+          status),
+        h('pre', { class: 'md', tabindex: '0', 'aria-label': 'Founder Manual as Markdown' }, md)),
+      h('section', { class: 'card close no-print', 'aria-labelledby': 'closeTitle' },
+        h('h2', { id: 'closeTitle' }, 'You wrote the manual. Pareto has the Right Hand who can run it.'),
+        h('p', null, '100+ founders served. 250+ Right Hands in the community, top 1% of applicants, 40+ hours of AI training before placement.'),
+        h('p', null, 'Bring this manual to a 20-minute Matching Call. If we are a fit, you meet 3 hand-picked Right Hands within 24 hours.'),
+        h('a', { class: 'btn btn-primary', href: '../index.html#get-it' }, 'See if I qualify for a Right Hand →'))));
+  mount(node, 'Your Founder Manual is ready', '#resTitle');
+}
+
+/* ---------- keyboard ---------- */
+document.addEventListener('keydown', function (e) {
+  if (state.view !== 'step' || e.defaultPrevented || e.altKey || e.metaKey) return;
+  var t = e.target, tag = t && t.tagName;
+  var typing = tag === 'INPUT' && t.type === 'text' || tag === 'TEXTAREA';
+  if (e.key === 'Enter' && typing) {
+    if (tag === 'TEXTAREA' && !(e.ctrlKey)) return;
+    e.preventDefault(); next(); return;
+  }
+  if (typing || (tag === 'BUTTON' && false)) return;
+  if (e.ctrlKey) return;
+  if (e.key === 'ArrowRight') { e.preventDefault(); next(); }
+  else if (e.key === 'ArrowLeft') { e.preventDefault(); back(); }
+});
+
+/* ---------- logo fallback ---------- */
+(function () {
+  var img = document.getElementById('logoImg');
+  if (!img) return;
+  function swap() {
+    var link = document.getElementById('logoLink');
+    if (!link || link.querySelector('.logo-fallback')) return;
+    img.style.display = 'none';
+    var s = document.createElement('span'); s.className = 'logo-fallback'; s.textContent = 'Pareto Talent';
+    link.appendChild(s);
+  }
+  img.addEventListener('error', swap);
+  if (img.complete && img.naturalWidth === 0) swap();
+})();
+
+load();
+render();
+})();
+</script>
+</body>
+</html>

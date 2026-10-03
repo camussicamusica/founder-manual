@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Founder Manual Builder is ready | Pareto Talent</title>
+  <meta name="description" content="Your Founder Manual Builder is ready. Open it now, build your one-page manual in about 10 minutes, and find two more free resources for founders.">
+  <meta name="fp-name" content="FP | Sofia Camussi | Thank You Page (Not Qualified)">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Your Founder Manual Builder is ready | Pareto Talent">
+  <meta property="og:description" content="Your Founder Manual Builder is ready. Open it now, build your one-page manual in about 10 minutes, and find two more free resources for founders.">
+  <meta name="theme-color" content="#050A0E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Hanken+Grotesk:wght@700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <div class="brand" id="brand"><img src="https://assets.cdn.filesafe.space/KjTTNn7q7Rl3zed7tzFS/media/65d4092400a2ec10ef5c1bef.png" alt="Pareto Talent" height="34" onerror="this.parentNode.classList.add('no-img')"><span class="brand-text" aria-hidden="true">Pareto Talent</span></div>
+      <span class="header-note">The Founder Manual Builder</span>
+    </div>
+  </header>
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="eyebrow">You're in</p>
+        <h1><span id="greet"></span>Your Founder Manual Builder is ready.</h1>
+        <p class="lead">Thanks for asking for it. Open it now and get your business out of your head in about 10 minutes.</p>
+        <div class="card deliver">
+          <p><strong>Open your Builder</strong>12 prompts. One page. No account needed. We also emailed you the link, so you can come back to it any time.</p>
+          <a class="btn btn-lg" data-builder href="../builder/">Open the Builder now →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="expect-title">
+      <div class="wrap wrap-narrow">
+        <div class="section-head"><p class="eyebrow">What happens next</p><h2 id="expect-title">Two more useful emails. That's it.</h2></div>
+        <ul class="expect">
+          <li><span><b>Check your inbox.</b> The Builder link is on its way, in case you want it on another device.</span></li>
+          <li><span><b>In about 2 days:</b> a short email on how to use your manual with a new hire or your AI.</span></li>
+          <li><span><b>In about 5 days:</b> a practical email on handing work off without weeks of training.</span></li>
+        </ul>
+        <p class="privacy" style="margin-top:20px">No spam, and you can unsubscribe in one click.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="next-title">
+      <div class="wrap">
+        <div class="section-head"><p class="eyebrow">Free next steps</p><h2 id="next-title">Two more things worth your time.</h2><p>Both are free from Pareto Talent. Pick the one that fits where you are.</p></div>
+        <div class="next-grid">
+          <a class="card next-card" href="https://paretotalent.com/guides/how-to-stop-being-the-bottleneck/" target="_blank" rel="noopener"><h3>Read: How to Stop Being the Bottleneck</h3><p>A short guide on why everything routes through you, and how to fix it step by step.</p><span class="go">Read the guide →</span></a>
+          <a class="card next-card" href="https://paretotalent.com/delegation-audit" target="_blank" rel="noopener"><h3>Take the Delegation Audit</h3><p>A few quick questions that show where your time goes and what to hand off first, with a 90-day plan.</p><span class="go">Start the audit →</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap"><p style="margin:0">A lead magnet concept built for Pareto Talent by Sofia Camussi.</p></div>
+  </footer>
+  <script src="../assets/config.js"></script>
+  <script>
+  (function () {
+    var cfg = window.FP_CONFIG || {};
+    var builder = "../" + (cfg.BUILDER_PATH || "builder/");
+    document.querySelectorAll("[data-builder]").forEach(function (a) { a.setAttribute("href", builder); });
+    try {
+      var n = sessionStorage.getItem("fp_first_name");
+      if (n) document.getElementById("greet").textContent = n.replace(/[<>]/g, "") + ", ";
+    } catch (e) {}
+  })();
+  </script>
+</body>
+</html>
