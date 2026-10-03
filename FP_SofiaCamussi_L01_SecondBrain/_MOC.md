@@ -13,6 +13,7 @@ Start here, then open the MOC of the folder you need.
 | Folder | MOC | What it holds |
 |---|---|---|
 | 00-context | [[00-context/_MOC]] | identity, brand voice, visual identity |
+| 01-sources | [[01-sources/_MOC]] | the three source types |
 | 01-sources/public-pages | [[01-sources/public-pages/_MOC]] | paretotalent.com pages, Wall of Love, existing lead magnets |
 | 01-sources/transcripts | [[01-sources/transcripts/_MOC]] | Day 1 story, Day 10 final project brief |
 | 01-sources/documents | [[01-sources/documents/_MOC]] | final project guidelines, bootcamp frameworks |

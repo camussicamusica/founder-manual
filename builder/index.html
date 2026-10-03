@@ -296,8 +296,8 @@ var STEPS = [
     lead: 'Hours, protected time and time zone. This is what a Right Hand needs before touching your calendar.',
     groups: [
       { id: 'hours', type: 'single', label: 'When do you work?', own: false, opts: [
-        { l: 'Early, 6am to 2pm', p: 'early, roughly 6am to 2pm' }, { l: 'Standard, 9am to 5pm', p: 'on a standard day, roughly 9am to 5pm' },
-        { l: 'Late, noon to 8pm', p: 'late, roughly noon to 8pm' }, { l: 'Split day, long break', p: 'in a split day with a long break in the middle' },
+        { l: 'Early, 6am to 2pm', p: 'early, roughly 6am to 2pm' }, { l: 'Standard, 9am to 5pm', p: 'standard hours, roughly 9am to 5pm' },
+        { l: 'Late, noon to 8pm', p: 'late, roughly noon to 8pm' }, { l: 'Split day, long break', p: 'a split day, with a long break in the middle' },
         { l: 'It changes weekly', p: 'on a schedule that changes. Check my calendar before you assume anything' } ] },
       { id: 'deep', type: 'multi', label: 'Which blocks are protected for deep work?', hint: 'Pick any. These are the hours nobody books over.', opts: [
         'Mornings before noon', 'Afternoons', 'One 2-hour block, every day', 'Fridays', 'Mondays', 'No meetings before 10am'] },
@@ -372,8 +372,8 @@ var STEPS = [
         { l: 'Only when something changed', s: 'Send me an update only when something changed. No news means things are on track.' } ] },
       { id: 'channel', type: 'multi', label: 'Send it by', opts: ['Email', 'Slack', 'WhatsApp', 'A shared doc', 'Notion'] },
       { id: 'format', type: 'single', label: 'Format', own: false, opts: [
-        { l: 'Short bullets', p: 'short bullets, five lines at most' }, { l: 'Plain sentences', p: 'plain language with no jargon' },
-        { l: 'Detailed, with links', p: 'detailed, with links to everything' } ] },
+        { l: 'Short bullets', s: 'Keep it to short bullets, five lines at most.' }, { l: 'Plain sentences', s: 'Keep it in plain language, with no jargon.' },
+        { l: 'Detailed, with links', s: 'Keep it detailed, with links to everything.' } ] },
       { id: 'content', type: 'multi', label: 'Every update includes', opts: [
         'What got done', 'What is blocked', 'What needs my decision', 'What is next', 'Numbers that changed', 'Questions, batched in one list'] },
       { id: 'weekly', type: 'single', label: 'Weekly rhythm', own: false, opts: [
@@ -414,7 +414,7 @@ var STEPS = [
     special: 'picks', groups: [] }
 ];
 
-var PROPER = { Slack: 1, Gmail: 1, Notion: 1, Asana: 1, Trello: 1, Monday: 1, Airtable: 1, Stripe: 1, Zoom: 1, Outlook: 1, Dropbox: 1, Telegram: 1, Teams: 1, Xero: 1, Wave: 1, Google: 1, Apple: 1, Microsoft: 1, Eastern: 1, Central: 1, Mountain: 1, Pacific: 1, Friday: 1, Monday: 1, Sunday: 1 };
+var PROPER = { Slack: 1, Gmail: 1, Notion: 1, Asana: 1, Trello: 1, Monday: 1, Airtable: 1, Stripe: 1, Zoom: 1, Outlook: 1, Dropbox: 1, Telegram: 1, Teams: 1, Xero: 1, Wave: 1, Google: 1, Apple: 1, Microsoft: 1, Eastern: 1, Central: 1, Mountain: 1, Pacific: 1, Friday: 1, Sunday: 1 };
 
 function clean(s) { return (typeof s === 'string') ? s.replace(/\s+/g, ' ').trim() : ''; }
 function cap(s) { s = clean(s); return s ? s.charAt(0).toUpperCase() + s.slice(1) : ''; }
@@ -441,6 +441,7 @@ function fmtHours(n) {
   var r = Math.round(n * 10) / 10;
   return (r % 1 === 0) ? String(r) : r.toFixed(1);
 }
+function hrs(n) { return fmtHours(n) + (Number(n) === 1 ? ' hr' : ' hrs'); }
 function slugify(s) { return clean(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''); }
 
 function optLabel(o) { return typeof o === 'string' ? o : o.l; }
@@ -509,9 +510,9 @@ var SECTIONS = [
     if (name && co) s.push("I'm " + name + ". I run " + co + ".");
     else if (name) s.push("I'm " + name + ".");
     else if (co) s.push("This manual is for " + co + ".");
-    if (type) s.push((co || 'My business') + ' is ' + type.p + '.');
+    if (type) s.push((name && co ? 'It' : (co || 'My business')) + ' is ' + type.p + '.');
     if (team) s.push(team.s || '');
-    return compact([P(s.join(' ')), line ? P('What we do: ' + line.replace(/^./, function (c) { return c.toLowerCase(); }).replace(/[.!?]+$/, '') + '.') : null]);
+    return compact([P(s.join(' ')), line ? P(sentence(line)) : null]);
   } },
   { step: 's2', title: 'How my week runs', build: function (a) {
     var hours = pick(a, 's2', 'hours');
@@ -563,15 +564,15 @@ var SECTIONS = [
     var s = [];
     if (when) s.push(when.s ? when.s : 'Send me an end-of-day update ' + when.p + '.');
     if (ch.length) s.push('Send it by ' + joinList(ch.map(softLower), 'or') + '.');
-    if (fm) s.push('Keep it ' + fm.p + '.');
+    if (fm) s.push(fm.s || '');
     if (wk) s.push(wk.s || '');
     return compact([P(s.join(' ')), L('Every update includes:', items(a, 's8', 'content'))]);
   } },
   { step: 's9', title: 'What I still do myself', build: function (a) {
     var ho = computeHandoff(a);
     if (!ho.tasks.length) return [];
-    var list = ho.tasks.map(function (t) { return t.label + ' (' + fmtHours(t.hours) + ' hrs/week)'; });
-    return compact([L('Still on my plate, biggest first:', list), P('Together that is ' + fmtHours(ho.total) + ' hours of my week. Take them from the top.')]);
+    var list = ho.tasks.map(function (t) { return t.label + ' (' + hrs(t.hours) + '/week)'; });
+    return compact([L('Still on my plate, biggest first:', list), P('Together that is ' + fmtHours(ho.total) + (Number(ho.total) === 1 ? ' hour' : ' hours') + ' of my week. Take them from the top.')]);
   } },
   { step: 's10', title: 'My tools and where things live', build: function (a) {
     var rows = [['Email and calendar', 'mail'], ['Chat', 'chat'], ['Projects and CRM', 'work'], ['Files', 'files'], ['Money', 'money'], ['Passwords', 'pass']];
@@ -785,7 +786,7 @@ function stepper(getV, setV, name) {
   var out = h('output', { 'aria-live': 'polite' });
   var minus = h('button', { type: 'button', 'aria-label': 'Less time on ' + name }, '−');
   var plus = h('button', { type: 'button', 'aria-label': 'More time on ' + name }, '+');
-  function paint() { out.textContent = fmtHours(getV()) + ' hrs/wk'; }
+  function paint() { out.textContent = hrs(getV()) + '/wk'; }
   minus.addEventListener('click', function () { setV(Math.max(0.5, getV() - 0.5)); paint(); });
   plus.addEventListener('click', function () { setV(Math.min(60, getV() + 0.5)); paint(); });
   paint();
@@ -799,8 +800,8 @@ function tasksView(totalEl) {
     totalEl.textContent = '';
     if (!ho.tasks.length) { totalEl.appendChild(document.createTextNode('Tick a task to start your total.')); return; }
     totalEl.appendChild(document.createTextNode('Total so far: '));
-    totalEl.appendChild(h('b', null, fmtHours(ho.total) + ' hrs/week'));
-    totalEl.appendChild(document.createTextNode(' · about ' + fmtHours(ho.month) + ' hrs/month'));
+    totalEl.appendChild(h('b', null, hrs(ho.total) + '/week'));
+    totalEl.appendChild(document.createTextNode(' · about ' + hrs(ho.month) + '/month'));
   }
   var list = h('div', { class: 'tasks' });
   TASKS.forEach(function (t) {
@@ -889,17 +890,10 @@ function renderStep() {
   } else if (S.special === 'picks') {
     body.appendChild(picksView());
   } else {
-    var row = null;
-    S.groups.forEach(function (g) {
-      if (g.type === 'text') body.appendChild(textField(S, g));
-      else body.appendChild(chipGroup(S, g));
-    });
-    // pair name + company on wide screens
-    if (S.id === 's1') {
-      var f = body.children;
-      var pair = h('div', { class: 'two' }, f[0], f[0]);
-      body.insertBefore(pair, body.firstChild);
-    }
+    var nodes = S.groups.map(function (g) { return g.type === 'text' ? textField(S, g) : chipGroup(S, g); });
+    // pair name + company side by side on wide screens
+    if (S.id === 's1') nodes = [h('div', { class: 'two' }, nodes[0], nodes[1])].concat(nodes.slice(2));
+    nodes.forEach(function (n) { body.appendChild(n); });
   }
   var last = i === n - 1;
   var node = h('div', { class: 'wrap step' },
@@ -972,11 +966,11 @@ function renderHandoff() {
   }
   card.appendChild(h('p', { class: 'desc' }, 'Hand these off first. They take the most of your week, so they give you the most back.'));
   var ol = h('ol', null, ho.top3.map(function (t) {
-    return h('li', null, h('span', { class: 't' }, t.label), h('span', { class: 'hrs' }, fmtHours(t.hours) + ' hrs/wk'));
+    return h('li', null, h('span', { class: 't' }, t.label), h('span', { class: 'hrs' }, hrs(t.hours) + '/wk'));
   }));
   var stats = h('div', { class: 'stats' },
-    h('div', { class: 'stat' }, h('div', { class: 'v' }, fmtHours(ho.top3Total) + ' hrs'), h('div', { class: 'k' }, 'back each week from these ' + ho.top3.length + (ho.top3.length === 1 ? ' task' : ' tasks'))),
-    h('div', { class: 'stat' }, h('div', { class: 'v' }, fmtHours(ho.total) + ' hrs/week'), h('div', { class: 'k' }, 'if you hand off everything you ticked, about ' + fmtHours(ho.month) + ' hrs a month')));
+    h('div', { class: 'stat' }, h('div', { class: 'v' }, hrs(ho.top3Total)), h('div', { class: 'k' }, 'back each week from these ' + ho.top3.length + (ho.top3.length === 1 ? ' task' : ' tasks'))),
+    h('div', { class: 'stat' }, h('div', { class: 'v' }, hrs(ho.total) + '/week'), h('div', { class: 'k' }, 'if you hand off everything you ticked, about ' + hrs(ho.month) + ' a month')));
   card.appendChild(h('div', { class: 'hand-grid' }, ol, stats));
   var picks = [txt(state.ans, 's12', '1'), txt(state.ans, 's12', '2'), txt(state.ans, 's12', '3')].filter(Boolean);
   if (picks.length) {
@@ -1070,7 +1064,7 @@ document.addEventListener('keydown', function (e) {
     if (tag === 'TEXTAREA' && !(e.ctrlKey)) return;
     e.preventDefault(); next(); return;
   }
-  if (typing || (tag === 'BUTTON' && false)) return;
+  if (typing) return;
   if (e.ctrlKey) return;
   if (e.key === 'ArrowRight') { e.preventDefault(); next(); }
   else if (e.key === 'ArrowLeft') { e.preventDefault(); back(); }

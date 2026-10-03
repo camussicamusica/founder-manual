@@ -13,7 +13,7 @@ A small, linked knowledge base about Pareto Talent, built for the Pareto Talent 
 ## How an AI should use this brain
 1. Read [[_MOC]] first (the root map), then the `_MOC.md` of the folder you need.
 2. Read the frontmatter of a file before the body. `type`, `source_type`, `source` and `tags` tell you what the file is and where its facts came from.
-3. Follow the `[[wikilinks]]` to related files. Do not guess; if a fact is not in a file, say it is not in the brain.
+3. Follow the wikilinks (double-square-bracket links) to related files. Do not guess; if a fact is not in a file, say it is not in the brain.
 4. Only use a number if its row says VERIFIED-SITE or VERIFIED-TRANSCRIPT. Anything marked UNVERIFIED or CONFLICT stays out of copy. The approved list is in [[proof-bank]].
 5. Cite the file name when you use a fact, for example "(source: [[pareto-talent-identity]])".
 6. Operating rules for the AI are in [[CLAUDE]].
